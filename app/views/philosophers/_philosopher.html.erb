@@ -1,0 +1,19 @@
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Philosopher Information</h5>
+      <div class="row">
+        <div class="col-6">
+          <p class="card-text"><strong>First name:</strong> <%= philosopher.first_name %></p>
+          <p class="card-text"><strong>Last name:</strong> <%= philosopher.last_name %></p>
+          <p class="card-text"><strong>Birth year:</strong> <%= philosopher.birth_year %></p>
+          <p class="card-text"><strong>Death year:</strong> <%= philosopher.death_year %></p>
+        </div>
+        <div class="col-6">
+          <p class="card-text"><strong>Short biography:</strong></p>
+          <p><%= philosopher.short_biography %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

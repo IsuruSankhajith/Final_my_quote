@@ -1,0 +1,19 @@
+<div class="bg-green-500 text-white p-4">
+  <%= notice %>
+</div>
+
+<h1 class="text-3xl font-bold mt-4">Manage quote</h1>
+
+<div id="quotes" class="mt-4">
+  <% @quotes.each do |quote| %>
+    <div class="bg-white rounded shadow p-4 mb-4">
+      <%= render quote %>
+      <p>
+        <%= link_to "Show this quote", quote, class: "text-blue-500 hover:underline" %>
+      </p>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "New quote", new_quote_path, class: "bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 mt-4 inline-block" %>
+

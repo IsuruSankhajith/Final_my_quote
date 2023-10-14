@@ -1,0 +1,44 @@
+
+<div id="<%= dom_id user %>" class="my-4">
+  
+  <div class="mb-3">
+    <label class="form-label"><strong>First name:</strong></label>
+    <div><%= user.first_name %></div>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label"><strong>Last name:</strong></label>
+    <div><%= user.last_name %></div>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label"><strong>Email:</strong></label>
+    <div><%= user.email %></div>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label"><strong>Current Password:</strong></label>
+    <span class="text-danger">ENCRYPTED</span>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label"><strong>Account Type:</strong></label>
+    <div>
+      <% if user.isadmin %>
+        <span>Administrator</span>
+      <% else %>
+        <span>Standard User</span>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label"><strong>Status:</strong></label>
+    <div><%= user.status %></div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label"><strong>User Role:</strong></label>
+    <div><%= user.user_role %></div>
+  </div>
+
+</div>

@@ -1,0 +1,14 @@
+<div class="container">
+  <h3 class="mt-5">Your Quotes</h3>
+  <hr />
+
+  <% @quotes.each do |quote| %>
+    <div class="card mb-3">
+      <div class="card-body">
+        <h4 class="card-title"><%= quote.title %></h4>
+        <p class="card-text"><%= quote.description %</p>
+        <a class="btn btn-primary" href="/quotes/<%= quote.id %>">Read full Quote</a>
+      </div>
+    </div>
+  <% end %>
+</div>

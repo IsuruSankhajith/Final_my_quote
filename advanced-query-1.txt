@@ -1,0 +1,39 @@
+quotes = Quote.includes(:category)
+
+quotes.each do |quote|
+  puts "TITLE:"
+  puts "#{quote.title}"
+  puts "DESCRIPTION:"
+  puts "#{quote.description}"
+  puts "TEXT:"
+  puts "#{quote.text}"
+  puts "USER COMMENT:"
+  puts "#{quote.user_comment}"
+  puts "PUBLICATION YEAR:"
+  puts "#{quote.publication_year}"
+  puts "IS PUBLIC:"
+  puts "#{quote.ispublic}"
+  puts "USERS ID:"
+  puts "#{quote.users_id}"
+  puts "PHILOSOPHERS ID:"
+  puts "#{quote.philosophers_id}"
+  
+  # Access the associated category
+  if quote.category
+    puts "CATEGORY NAME:"
+    puts "#{quote.category.category_name}"
+    puts "CATEGORY DESCRIPTION:"
+    puts "#{quote.category.description}"
+  else
+    puts "No associated category found."
+  end
+  
+  puts "CREATED AT:"
+  puts "#{quote.created_at}"
+  puts "UPDATED AT:"
+  puts "#{quote.updated_at}"
+  puts "USER ID:"
+  puts "#{quote.user_id}"
+  
+  puts "<next quote>"
+end

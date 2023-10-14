@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My First Webpage</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <header class="bg-dark text-white text-center py-4">
+        <h1 class="display-4">Welcome to My Quote App!</h1>
+    </header>
+
+    <section id="about" class="container py-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="text-center mb-5">
+                    <h2 class="display-5">Hi there!</h2>
+                    <p class="lead">Discover a world of wisdom, motivation, and insight at MyQuote. Immerse yourself in a diverse collection of people's quotes spanning a wide spectrum of categories. Whether you're seeking guidance, a spark of creativity, or simply a dose of positivity, MyQuote has something for everyone.</p>
+                </div>
+
+                <h3>Recently Added</h3>
+                <hr />
+
+                <% @quotes.each do |quote| %>
+                    <div class="card bg-body-tertiary" style="margin-bottom: 10px;">
+                        <div class="card-body">
+                            <h4 class="card-title"><%= quote.title %></h4>
+                            <p class="card-text"><%= quote.description %><br />[<a href="/quotes/<%= quote.id %>">Read full quote</a>]</p>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+            <div class="col-md-6">
+                <div class="text-center">
+                    <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" alt="Image description" class="img-fluid rounded" style="max-width: 400px;">
+                </div>
+            </div>
+        </div>
+    </section>  
+
+    <footer class="bg-light text-center py-3">
+        <p>&copy; 2023 My First Webpage. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

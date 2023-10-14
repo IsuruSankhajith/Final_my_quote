@@ -1,0 +1,58 @@
+<%= form_with(model: user) do |form| %>
+  <% if user.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group" style="padding-bottom: 10px;">
+    <%= form.text_field :fname, placeholder: 'First Name', class: 'form-control', readonly: (logged_in? && is_administrator?) %>
+  </div>
+
+  <div class="form-group" style="padding-bottom: 10px;">
+    <%= form.text_field :lname, placeholder: 'Last Name', class: 'form-control', readonly: (logged_in? && is_administrator?) %>
+  </div>
+
+  <div class="form-group" style="padding-bottom: 10px;">
+    <%= form.text_field :email, placeholder: 'Email Address', class: 'form-control', readonly: (logged_in? && is_administrator?) %>
+  </div>
+
+  <div class="form-group" style="padding-bottom: 10px;">
+    <%= form.password_field :password, placeholder: user.password_digest.present? ? 'Password set' : 'Choose a strong password', class: 'form-control', readonly: (logged_in? && is_administrator?) %>
+  </div>
+
+  <div class="form-group" style="padding-bottom: 10px;">
+  <% if logged_in? && is_administrator? %>
+    <%= form.label :is_admin do %>
+      Admin Role
+    <%= form.check_box :is_admin %>
+  <% end %>
+  <% else %>
+    <%= form.hidden_field :is_admin, value: false %>
+  <% end %>
+  </div>
+
+  <div class="form-group" style="padding-bottom: 10px;">
+  <% if logged_in? && is_administrator? %>
+    <%= form.select :status, ['Active', 'Suspended', 'Banned'], {}, class: 'form-control' %>
+  <% elsif logged_in? && !is_administrator? %>
+    <%= form.hidden_field :status %>
+  <% else %>
+    <%= form.hidden_field :status, value: "Active" %>
+  <% end %>
+  </div>
+
+  <div>
+  <% if logged_in? %>
+    <%= form.submit 'Update', class: 'btn btn-primary' %>
+  <% else %>
+    <%= form.submit 'Submit', class: 'btn btn-primary' %>
+  <% end %>
+  </div>
+<% end %>

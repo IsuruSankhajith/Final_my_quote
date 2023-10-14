@@ -1,0 +1,21 @@
+quotes = Quote.where(user_id: 5)
+
+quotes.each do |quote|
+  puts "TITLE:"
+  puts "#{quote.title}"
+  puts "DESCRIPTION:"
+  puts "#{quote.description}"
+  puts "TEXT:"
+  puts "#{quote.text}"
+  puts "USER COMMENT:"
+  puts "#{quote.user_comment}"
+  puts "PUBLICATION YEAR:"
+  puts "#{quote.publication_year}"
+  puts "IS PUBLIC:"
+  puts "#{quote.ispublic}"
+  puts "USER ID:"
+  puts "#{quote.user_id}"
+  puts "PHILOSOPHERS ID:"
+  puts "#{quote.philosophers_id}"
+  puts "<next quote>"
+end

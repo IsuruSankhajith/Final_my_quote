@@ -1,0 +1,32 @@
+quotes_with_onion = Quote.where("text LIKE ? OR description LIKE ?", "%onion%", "%onion%")
+
+quotes_with_onion_count = quotes_with_onion.count
+puts "There were #{quotes_with_onion_count} quotes found that include 'onion'."
+
+if quotes_with_onion_count > 0
+  quotes_with_onion.each do |quote|
+    puts "TITLE:"
+    puts "#{quote.title}"
+    puts "DESCRIPTION:"
+    puts "#{quote.description}"
+    puts "TEXT:"
+    puts "#{quote.text}"
+    puts "USER COMMENT:"
+    puts "#{quote.user_comment}"
+    puts "PUBLICATION YEAR:"
+    puts "#{quote.publication_year}"
+    puts "IS PUBLIC:"
+    puts "#{quote.ispublic}"
+    puts "USER ID:"
+    puts "#{quote.user_id}"
+    puts "PHILOSOPHER ID:"
+    puts "#{quote.philosophers_id}"
+    puts "CREATED AT:"
+    puts "#{quote.created_at}"
+    puts "UPDATED AT:"
+    puts "#{quote.updated_at}"
+    puts "<next quote>"
+  end
+else
+  puts "No quotes found that include 'onion'."
+end

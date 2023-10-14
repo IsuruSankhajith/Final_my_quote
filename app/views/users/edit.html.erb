@@ -1,0 +1,18 @@
+<div class="container mt-4" id="update-details">
+  <% if logged_in? && is_administrator? %>
+    <h3>Update User Details</h3>
+  <% else %>
+    <h3>Update Your Details</h3>
+  <% end %>
+</div>
+
+<%= render "form", user: @user %>
+
+<% if logged_in? && is_administrator? %>
+  <div class="container mt-3" id="show-user">
+    <div class="btn-group">
+      <a href="#show-user" class="btn btn-primary">Show this user</a>
+      <a href="#update-details" class="btn btn-secondary">Back to Update</a>
+    </div>
+  </div>
+<% end %>

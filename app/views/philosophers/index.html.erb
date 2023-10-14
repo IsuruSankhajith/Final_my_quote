@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Philosophers</h1>
+
+<div id="philosophers">
+  <% @philosophers.each do |philosopher| %>
+    <%= render philosopher %>
+    <p>
+      <%= link_to "Show this philosopher", philosopher %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New philosopher", new_philosopher_path %>

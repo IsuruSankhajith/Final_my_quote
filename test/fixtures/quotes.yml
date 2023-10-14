@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  text: MyText
+  user_comment: MyText
+  publication_year: 1
+  ispublic: false
+
+two:
+  title: MyString
+  description: MyText
+  text: MyText
+  user_comment: MyText
+  publication_year: 1
+  ispublic: false

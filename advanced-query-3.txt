@@ -1,0 +1,28 @@
+# Fetch quotes with the word "tomato" in the title
+quotes_with_tomato = Quote.where("title LIKE ?", "%tomato%")
+
+quotes_with_life_cnt = quotes_with_tomato.count
+
+if quotes_with_life_cnt > 1
+  quotes_with_life.each do |quote|
+    puts "TITLE:"
+    puts "#{quote.title}"
+    puts "DESCRIPTION:"
+    puts "#{quote.description}"
+    puts "USER COMMENT:"
+    puts "#{quote.user_comment}"
+    puts "PUBLICATION YEAR:"
+    puts "#{quote.publication_year}"
+    puts "<next quote>"
+  end
+else
+  quote = quotes_with_tomato.first
+  puts "TITLE:"
+  puts "#{quote.title}"
+  puts "DESCRIPTION:"
+  puts "#{quote.description}"
+  puts "USER COMMENT:"
+  puts "#{quote.user_comment}"
+  puts "PUBLICATION YEAR:"
+  puts "#{quote.publication_year}"
+end

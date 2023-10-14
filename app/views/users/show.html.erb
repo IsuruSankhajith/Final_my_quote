@@ -1,0 +1,12 @@
+<div class="container">
+  <p class="alert alert-success"><%= notice %></p>
+
+  <%= render @user %>
+
+  <div>
+    <%= link_to "Edit this user", edit_user_path(@user), class: "btn btn-primary" %> |
+    <%= link_to "Back to users", users_path, class: "btn btn-secondary" %>
+
+    <%= button_to "Delete this user", @user, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+  </div>
+</div>
